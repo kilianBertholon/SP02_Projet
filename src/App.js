@@ -1,31 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Cadre from './src/component/Cadre.js'
-import Graph from './src/component/Graph.js'
-import ButtonLancer from './src/component/ButtonLancer.js'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TestAffichage from './pages/TestAffichage';
+import Identification from './pages/Identification'
+import PresentationProjet from './pages/PresentationProjet'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Cadre title = "SPO2 Project"></Cadre>
-      <Graph title = "SP02 Graph"></Graph>
-      <Graph title = "FC Graph"></Graph>
-      <ButtonLancer label = "Lancer le test"></ButtonLancer>
-      <StatusBar 
-              backgroundColor="#FFF" // Couleur d'arrière-plan de la barre d'état
-              barStyle="light-content" // Couleur du texte (light ou dark)
-              hidden={false} // Si true, la barre d'état est masquée
-               />
-    </View>
+const Stack = createNativeStackNavigator();
+
+
+function App() {
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='PresentationProjet'>
+        <Stack.Screen name="TestAffichage" component={TestAffichage} />
+        <Stack.Screen name="Identification" component={Identification} />
+        <Stack.Screen name="PresentationProjet" component={PresentationProjet} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginTop: 40,
-  },
-});
+export default  App;
