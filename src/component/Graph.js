@@ -20,19 +20,19 @@ const styles = StyleSheet.create({
     marginBottom: '2%', // Marge en bas du carré
   },
   header: {
-    flex: 0.05, // 5% de la hauteur
+    flex: 0.10, // 5% de la hauteur
     justifyContent: 'center', // Centre le titre verticalement
     padding: 10, // Marge intérieure pour le titre
     backgroundColor: '#000000', // Couleur de fond du titre
   },
   title: {
     color: '#FFFFFF',
-    fontSize: 10,
+    fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center', // Centre le texte horizontalement
   },
   content: {
-    flex: 0.95, // 95% de la hauteur pour le contenu (graphiques, etc.)
+    flex: 0.90, // 95% de la hauteur pour le contenu (graphiques, etc.)
   },
 });
 

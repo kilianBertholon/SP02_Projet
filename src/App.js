@@ -1,25 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import * as React from 'react';
+import React from 'react';
+import { name as appName } from './app.json';
+import { AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { AuthProvider } from './back/AuthContext'; // Importez le AuthProvider
+
 import TestAffichage from './pages/TestAffichage';
-import Identification from './pages/Identification'
-import PresentationProjet from './pages/PresentationProjet'
+import SeConnecter from './pages/SeConnecter';
+import Accueil from './pages/Accueil';
+import Inscription from './pages/Inscription';
+import MonCompte from './pages/MonCompte';
+
+
 
 const Stack = createNativeStackNavigator();
 
-
-function App() {
+export default function App() {
   return(
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='PresentationProjet'>
-        <Stack.Screen name="TestAffichage" component={TestAffichage} />
-        <Stack.Screen name="Identification" component={Identification} />
-        <Stack.Screen name="PresentationProjet" component={PresentationProjet} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Accueil'>
+          <Stack.Screen name="Accueil" options={{headerShown: false}} component={Accueil} />
+          <Stack.Screen name="SeConnecter" options={{headerShown: false}} component={SeConnecter} />
+          <Stack.Screen name="TestAffichage" options={{headerShown: false}} component={TestAffichage} />
+          <Stack.Screen name="Inscription" options={{headerShown: false}} component={Inscription} />
+          <Stack.Screen name="MonCompte" options={{headerShown: false}} component={MonCompte} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 
-export default  App;
+AppRegistry.registerComponent(appName, () => App);
+

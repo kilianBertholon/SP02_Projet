@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 0, // Pour que le cadre ne prenne pas toute la hauteur de l'écran
     width:'100%', //prenne toute la largeur de l'écran
-    height:'100%', // Prenne 10% de la hauteur
+    height:'100%', // Prenne 100% de la hauteur
     padding: 16,
     backgroundColor: '#000000', // Couleur de fond du cadre
   },
