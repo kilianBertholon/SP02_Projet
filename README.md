@@ -7,4 +7,4 @@ Front :
 - React Native ( https://reactnative.dev/) 
 
 Back : 
-Firebase (https://firebase.google.com/)
+- Firebase (https://firebase.google.com/)
